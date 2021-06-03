@@ -1,0 +1,11 @@
+application:
+  name: '@pom.name@'
+  version: '@pom.version@'
+
+client:
+  github:
+    url: https://api.github.com
+    acceptVersion: application/vnd.github.v3+json
+    connect-timeout: 10 # 10 seconds
+    read-timeout: 30 # 30 seconds
+    follow-redirects: true
