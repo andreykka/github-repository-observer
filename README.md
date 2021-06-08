@@ -6,7 +6,12 @@ VCS Repository Observer is an application that at it's base version allows extra
 * Swagger specification available at path: `/v3/api-docs`
 
 ### Build project:
-Run `mvn clean package` to compile and generate all classes and run tests.
+> Verity before start:
+> * `JDK 1.8` or above installed. Use `java -verion` to check 
+> * `Maven` build tool installed. Use `mvn -version` to check
+> * `Docker` engine installed(Optional). Use `docker --version` to check
+
+Run `mvn clean package` to compile and generate all classes, run tests and package application.
 
 ### Run project locally:
 1. Using generated JAR artifact:
