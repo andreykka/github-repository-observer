@@ -6,7 +6,7 @@
 
     <groupId>com.vcs.observer</groupId>
     <artifactId>vcs-repository-observer</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>

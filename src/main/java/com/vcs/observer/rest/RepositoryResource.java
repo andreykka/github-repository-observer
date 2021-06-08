@@ -19,11 +19,11 @@ public class RepositoryResource {
     @Autowired
     private RepositoryService repositoryService;
 
-    @ApiOperation(value = "Find all public, not fork repositories for specified user", response = List.class)
+    @ApiOperation(value = "Find all public, not fork repositories for specified user")
     @ApiResponses({
-            @ApiResponse(code = 200, message = "Successfully retrieved value", response = List.class),
-            @ApiResponse(code = 404, message = "User not found", response = ErrorResponse.class),
-            @ApiResponse(code = 406, message = "Invalid Media type used", response = ErrorResponse.class)
+            @ApiResponse(code = 200, message = "Successfully retrieved value"),
+            @ApiResponse(code = 404, message = "User not found"),
+            @ApiResponse(code = 406, message = "Invalid Media type used")
     })
     @GetMapping(value = "/repositories/owner/{username}", produces = APPLICATION_JSON_VALUE)
     public List<RepositoryDto> findRepositories(
