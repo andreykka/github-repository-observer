@@ -1,6 +1,11 @@
-spring:
-  application:
-    name: '@pom.name@'
-    version: '@pom.version@'
+application:
+  name: '@pom.name@'
+  version: '@pom.version@'
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
 
 server.port: 8080
