@@ -1,6 +1,7 @@
-package com.vcs.observer.client.impl.github;
+package com.vcs.observer.config.client.github;
 
 import com.vcs.observer.client.VcsClient;
+import com.vcs.observer.client.impl.github.GithubClient;
 import feign.Feign;
 import feign.Request;
 import feign.RequestInterceptor;

@@ -1,4 +1,4 @@
-package com.vcs.observer.client.impl.github;
+package com.vcs.observer.config.client.github;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vcs.observer.client.exception.VcsClientBadRequestException;
