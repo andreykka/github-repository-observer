@@ -1,6 +1,9 @@
 # vcs-repository-observer
 VCS Repository Observer is an application that at it's base version allows extracting information from VCS(currently GitHub only)  
- 
+
+### Public URL of Load Balancer:
+http://vcsobserverloadbalancer-83794038.us-east-1.elb.amazonaws.com/swagger-ui/index.html
+
 ### Documentation: 
 * Swagger UI available at path: `/swagger-ui/index.html`
 * Swagger specification available at path: `/v3/api-docs`
