@@ -113,6 +113,9 @@
                 <version>2.4.4</version>
                 <configuration>
                     <mainClass>com.vcs.observer.Application</mainClass>
+                    <profiles>
+                        <profile>dev</profile>
+                    </profiles>
                 </configuration>
                 <executions>
                     <execution>
