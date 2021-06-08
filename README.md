@@ -21,7 +21,11 @@ Run `mvn clean package` to compile and generate all classes, run tests and packa
     ```shell
     java -jar -Dspring.profiles.active=dev target/vcs-repository-observer-*.jar
     ```
-2. Using Docker engine:
+2. Using `spring-boot` maven plugin:
+    ```shell
+    mvn spring-boot:run -Pdev
+    ```
+3. Using Docker engine:
     ```shell
     # build a docker image
     docker build -t vcs-repository-observer .
