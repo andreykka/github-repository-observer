@@ -29,3 +29,6 @@ target
 
 # Misc
 .DS_Store
+
+#ignore folder
+.ignore
