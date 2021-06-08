@@ -5,8 +5,6 @@ import com.vcs.observer.dto.BranchDto;
 import com.vcs.observer.mapper.BranchMapper;
 import com.vcs.observer.service.BranchService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,11 +14,13 @@ import java.util.stream.Collectors;
 @Service
 public class GithubBranchService implements BranchService {
 
-    @Autowired
-    private VcsClient vcsClient;
+    private final VcsClient vcsClient;
+    private final BranchMapper branchMapper;
 
-    @Autowired
-    private BranchMapper branchMapper;
+    public GithubBranchService(VcsClient vcsClient, BranchMapper branchMapper) {
+        this.vcsClient = vcsClient;
+        this.branchMapper = branchMapper;
+    }
 
     @Override
     public List<BranchDto> findBranches(String username, String repository) {

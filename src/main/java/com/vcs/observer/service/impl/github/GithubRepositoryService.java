@@ -10,7 +10,6 @@ import com.vcs.observer.service.BranchService;
 import com.vcs.observer.service.RepositoryService;
 import com.vcs.observer.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -23,21 +22,23 @@ import java.util.stream.Stream;
 @Service
 public class GithubRepositoryService implements RepositoryService {
 
-    @NotNull
-    @Value("${github.batch-size}")
-    private Integer batchSize;
+    private final Integer batchSize;
+    private final VcsClient vcsClient;
+    private final RepositoryMapper repositoryMapper;
+    private final BranchService branchService;
+    private final UserService userService;
 
-    @Autowired
-    private VcsClient vcsClient;
-
-    @Autowired
-    private RepositoryMapper repositoryMapper;
-
-    @Autowired
-    private BranchService branchService;
-
-    @Autowired
-    private UserService userService;
+    public GithubRepositoryService(VcsClient vcsClient,
+                                   RepositoryMapper repositoryMapper,
+                                   BranchService branchService,
+                                   UserService userService,
+                                   @NotNull @Value("${github.batch-size}") Integer batchSize) {
+        this.vcsClient = vcsClient;
+        this.repositoryMapper = repositoryMapper;
+        this.branchService = branchService;
+        this.userService = userService;
+        this.batchSize = batchSize;
+    }
 
     @Override
     public List<RepositoryDto> findPublicNonForkRepositories(String username) {

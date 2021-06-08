@@ -1,10 +1,11 @@
 package com.vcs.observer.rest;
 
 import com.vcs.observer.dto.RepositoryDto;
-import com.vcs.observer.exception.model.ErrorResponse;
 import com.vcs.observer.service.RepositoryService;
-import io.swagger.annotations.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +17,11 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class RepositoryResource {
 
-    @Autowired
-    private RepositoryService repositoryService;
+    private final RepositoryService repositoryService;
+
+    public RepositoryResource(RepositoryService repositoryService) {
+        this.repositoryService = repositoryService;
+    }
 
     @ApiOperation(value = "Find all public, not fork repositories for specified user")
     @ApiResponses({

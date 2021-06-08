@@ -7,7 +7,6 @@ import com.vcs.observer.dto.UserDto;
 import com.vcs.observer.mapper.UserMapper;
 import com.vcs.observer.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,11 +15,13 @@ import java.util.Optional;
 @Service
 public class GithubUserService implements UserService {
 
-    @Autowired
-    private VcsClient vcsClient;
+    private final VcsClient vcsClient;
+    private final UserMapper userMapper;
 
-    @Autowired
-    private UserMapper userMapper;
+    public GithubUserService(VcsClient vcsClient, UserMapper userMapper) {
+        this.vcsClient = vcsClient;
+        this.userMapper = userMapper;
+    }
 
     @Override
     public Optional<UserDto> getUser(String username) {
